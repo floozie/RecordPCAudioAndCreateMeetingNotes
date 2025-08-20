@@ -45,6 +45,21 @@ This project provides a robust workflow for recording, splitting, and transcribi
    - Use the Copilot agent to summarize the transcript and generate your final meeting notes.
    - Open the transcript from the `audiologs` folder and use Copilot's summarization capabilities as needed.
 
+5. **Live Dictation with Whisper (Real-Time Speech-to-Text)**
+   - Use the new live dictation script to transcribe your speech in real time using Whisper.
+   - The script captures audio from your microphone, detects speech, and writes transcriptions to a timestamped file in the `dictations` folder.
+   - It ignores silent or too-quiet audio chunks, only transcribing meaningful speech.
+   - All status and informational messages are shown in English, while transcription remains in German (by default).
+   - Usage:
+     ```
+     python scripts/whisper_live_dictation_final.py
+     ```
+   - Speak into your microphone. The script will show chunk volume information and transcribe when speech is detected.
+   - To stop, press `Ctrl+C`. The script will finalize and save all transcriptions.
+   - The output file will be named like `dictations/dictation_YYYY-MM-DD_HH-MM-SS.txt`.
+   - You can adjust the sensitivity (minimum volume threshold) in the script if needed for your environment.
+   - Requirements: Python, sounddevice, numpy, whisper, threading, queue.
+
 ---
 
 **Tip:**

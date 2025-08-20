@@ -49,6 +49,9 @@ meetingNotes/
 # wav files
 *.wav
 
+# Ignore all dictation text files in dictations folder
+dictations/dictation_*.txt
+
 # debug information files
 *.dwo
 
